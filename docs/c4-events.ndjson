@@ -13,3 +13,9 @@
 {"seq":13,"pass":2,"event":"add_edge","payload":{"id":"edge:repo-sync-github","from":"container:repository-tree","to":"ext:github","label":"Git remote sync (push/pull)"}}
 {"seq":14,"pass":2,"event":"add_edge","payload":{"id":"edge:developer-repo-tree","from":"actor:developer","to":"container:repository-tree","label":"Edits and maintains files"}}
 {"seq":15,"pass":2,"event":"freeze_pass","payload":{"pass":2,"name":"l2_containers"}}
+{"seq":16,"pass":3,"event":"add_component","payload":{"id":"component:workspace-files","label":"Working tree files (e.g. root and profile paths)","container":"container:repository-tree","kind":"storage"}}
+{"seq":17,"pass":3,"event":"add_component","payload":{"id":"component:git-configuration","label":"Git metadata and remote configuration (.git)","container":"container:repository-tree","kind":"integration"}}
+{"seq":18,"pass":3,"event":"exclude_candidate","payload":{"id":"candidate:separate-profile-service","reason":"profile/ is a directory in the same repository tree, not a separate runtime or deployable unit in this codebase."}}
+{"seq":19,"pass":3,"event":"add_edge","payload":{"id":"edge:git-config-github","from":"component:git-configuration","to":"ext:github","label":"Declares origin remote and sync semantics"}}
+{"seq":20,"pass":3,"event":"add_edge","payload":{"id":"edge:files-under-vc","from":"component:workspace-files","to":"component:git-configuration","label":"Paths tracked or ignored per repository rules"}}
+{"seq":21,"pass":3,"event":"freeze_pass","payload":{"pass":3,"name":"l3_selection"}}
