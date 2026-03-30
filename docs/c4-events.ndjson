@@ -1,1 +1,8 @@
 {"seq":1,"pass":0,"event":"group_nodes","payload":{"id":"group:bootstrap","label":"C4 generation bootstrap","members":[]}}
+{"seq":2,"pass":1,"event":"add_actor","payload":{"id":"actor:developer","label":"Developer or repository maintainer"}}
+{"seq":3,"pass":1,"event":"add_external","payload":{"id":"ext:github","label":"GitHub (git remote hosting)"}}
+{"seq":4,"pass":1,"event":"exclude_candidate","payload":{"id":"candidate:application-runtime","reason":"No Dockerfile, Compose file, Kubernetes manifests, package.json, requirements.txt, or other executable application entrypoints found in the repository tree (code-only inventory)."}}
+{"seq":5,"pass":1,"event":"group_nodes","payload":{"id":"group:deployables","label":"Deployable runtime units","members":[]}}
+{"seq":6,"pass":1,"event":"group_nodes","payload":{"id":"group:pass1-runtime","label":"Runtime inventory (Pass 1)","members":["actor:developer","ext:github"]}}
+{"seq":7,"pass":1,"event":"add_edge","payload":{"id":"edge:developer-github","from":"actor:developer","to":"ext:github","label":"Uses for clone, push, and pull"}}
+{"seq":8,"pass":1,"event":"freeze_pass","payload":{"pass":1,"name":"runtime_inventory"}}

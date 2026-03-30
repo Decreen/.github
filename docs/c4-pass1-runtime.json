@@ -1,0 +1,22 @@
+{
+  "pass": 1,
+  "actors": [
+    {"id": "actor:developer", "label": "Developer or repository maintainer"}
+  ],
+  "externals": [
+    {"id": "ext:github", "label": "GitHub (git remote hosting)"}
+  ],
+  "deployables": [],
+  "groups": [
+    {"id": "group:deployables", "members": []},
+    {"id": "group:pass1-runtime", "members": ["actor:developer", "ext:github"]}
+  ],
+  "exclusions": [
+    {"id": "candidate:application-runtime", "reason": "No Dockerfile, Compose file, Kubernetes manifests, package.json, requirements.txt, or other executable application entrypoints found in the repository tree (code-only inventory)."}
+  ],
+  "edges": [
+    {"id": "edge:developer-github", "from": "actor:developer", "to": "ext:github", "label": "Uses for clone, push, and pull"}
+  ],
+  "seq_max": 8,
+  "frozen": "runtime_inventory"
+}
