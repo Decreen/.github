@@ -19,3 +19,5 @@
 {"seq":19,"pass":3,"event":"add_edge","payload":{"id":"edge:git-config-github","from":"component:git-configuration","to":"ext:github","label":"Declares origin remote and sync semantics"}}
 {"seq":20,"pass":3,"event":"add_edge","payload":{"id":"edge:files-under-vc","from":"component:workspace-files","to":"component:git-configuration","label":"Paths tracked or ignored per repository rules"}}
 {"seq":21,"pass":3,"event":"freeze_pass","payload":{"pass":3,"name":"l3_selection"}}
+{"seq":22,"pass":4,"event":"refine_label","payload":{"id":"sys:decreen-dot-github","label":"Decreen `.github` profile repository (GitHub-hosted)"}}
+{"seq":23,"pass":4,"event":"freeze_pass","payload":{"pass":4,"name":"final_render"}}
