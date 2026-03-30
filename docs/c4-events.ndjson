@@ -6,3 +6,10 @@
 {"seq":6,"pass":1,"event":"group_nodes","payload":{"id":"group:pass1-runtime","label":"Runtime inventory (Pass 1)","members":["actor:developer","ext:github"]}}
 {"seq":7,"pass":1,"event":"add_edge","payload":{"id":"edge:developer-github","from":"actor:developer","to":"ext:github","label":"Uses for clone, push, and pull"}}
 {"seq":8,"pass":1,"event":"freeze_pass","payload":{"pass":1,"name":"runtime_inventory"}}
+{"seq":9,"pass":2,"event":"set_system_boundary","payload":{"id":"sys:decreen-dot-github","label":"Decreen .github repository (GitHub-hosted)"}}
+{"seq":10,"pass":2,"event":"add_container","payload":{"id":"container:repository-tree","label":"Version-controlled repository tree (files and directories)"}}
+{"seq":11,"pass":2,"event":"exclude_candidate","payload":{"id":"candidate:relational-database","reason":"No database drivers, connection strings, or schema migrations found in source or config files."}}
+{"seq":12,"pass":2,"event":"exclude_candidate","payload":{"id":"candidate:message-broker","reason":"No broker client libraries or queue configuration found in repository files."}}
+{"seq":13,"pass":2,"event":"add_edge","payload":{"id":"edge:repo-sync-github","from":"container:repository-tree","to":"ext:github","label":"Git remote sync (push/pull)"}}
+{"seq":14,"pass":2,"event":"add_edge","payload":{"id":"edge:developer-repo-tree","from":"actor:developer","to":"container:repository-tree","label":"Edits and maintains files"}}
+{"seq":15,"pass":2,"event":"freeze_pass","payload":{"pass":2,"name":"l2_containers"}}
