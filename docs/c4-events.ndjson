@@ -18,3 +18,13 @@
 {"seq":18,"pass":2,"event":"add_edge","payload":{"id":"edge:root_served_via_github","from":"container:root_markdown","to":"ext:github_hosting","label":"published as static content"}}
 {"seq":19,"pass":2,"event":"add_edge","payload":{"id":"edge:reader_consumes_github","from":"actor:public_reader","to":"ext:github_hosting","label":"browse"}}
 {"seq":20,"pass":2,"event":"freeze_pass","payload":{"pass":2,"note":"L2 containers frozen"}}
+{"seq":21,"pass":3,"event":"add_component","payload":{"id":"component:profile_content_store","label":"Authored profile markdown body","parent":"container:profile_markdown","kinds":["state"],"c4_kind":"storage"}}
+{"seq":22,"pass":3,"event":"add_component","payload":{"id":"component:profile_outbound_links","label":"Outbound hyperlinks in profile README","parent":"container:profile_markdown","kinds":["routing"],"c4_kind":"router"}}
+{"seq":23,"pass":3,"event":"add_component","payload":{"id":"component:root_content_store","label":"Authored root README body","parent":"container:root_markdown","kinds":["state"],"c4_kind":"storage"}}
+{"seq":24,"pass":3,"event":"add_component","payload":{"id":"component:root_outbound_links","label":"Outbound hyperlinks in root README","parent":"container:root_markdown","kinds":["routing"],"c4_kind":"router"}}
+{"seq":25,"pass":3,"event":"exclude_candidate","payload":{"id":"candidate:l3_api_gateway","reason":"No HTTP API surface in repository; static markdown only"}}
+{"seq":26,"pass":3,"event":"add_edge","payload":{"id":"edge:profile_body_to_links","from":"component:profile_content_store","to":"component:profile_outbound_links","label":"embeds links"}}
+{"seq":27,"pass":3,"event":"add_edge","payload":{"id":"edge:root_body_to_links","from":"component:root_content_store","to":"component:root_outbound_links","label":"embeds links"}}
+{"seq":28,"pass":3,"event":"add_edge","payload":{"id":"edge:profile_links_to_github","from":"component:profile_outbound_links","to":"ext:github_hosting","label":"resolve in browser"}}
+{"seq":29,"pass":3,"event":"add_edge","payload":{"id":"edge:root_links_to_github","from":"component:root_outbound_links","to":"ext:github_hosting","label":"resolve in browser"}}
+{"seq":30,"pass":3,"event":"freeze_pass","payload":{"pass":3,"note":"L3 component selection frozen (2 containers, 2 components each)"}}

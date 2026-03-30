@@ -1,0 +1,22 @@
+{
+  "pass": 3,
+  "selected_containers": [
+    {
+      "id": "container:profile_markdown",
+      "components": [
+        {"id": "component:profile_content_store", "concerns": ["state"], "c4_kind": "storage"},
+        {"id": "component:profile_outbound_links", "concerns": ["routing"], "c4_kind": "router"}
+      ],
+      "concern_coverage": ["state", "routing"]
+    },
+    {
+      "id": "container:root_markdown",
+      "components": [
+        {"id": "component:root_content_store", "concerns": ["state"], "c4_kind": "storage"},
+        {"id": "component:root_outbound_links", "concerns": ["routing"], "c4_kind": "router"}
+      ],
+      "concern_coverage": ["state", "routing"]
+    }
+  ],
+  "seq_range": [21, 30]
+}
