@@ -5,7 +5,7 @@ flowchart TD
   subgraph L1["System context (Pass 1 frozen)"]
     actor_org_member["actor:org_member<br/>Organization member"]
     actor_public_reader["actor:public_reader<br/>Public reader"]
-    ext_github_hosting["ext:github_hosting<br/>GitHub (hosting and rendering)"]
+    ext_github_hosting["ext:github_hosting<br/>GitHub platform (static hosting and rendering)"]
   end
   subgraph L2["sys:org_profile_suite — Pass 2 frozen"]
     container_profile_markdown["container:profile_markdown<br/>Profile landing markdown"]

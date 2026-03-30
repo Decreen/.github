@@ -28,3 +28,5 @@
 {"seq":28,"pass":3,"event":"add_edge","payload":{"id":"edge:profile_links_to_github","from":"component:profile_outbound_links","to":"ext:github_hosting","label":"resolve in browser"}}
 {"seq":29,"pass":3,"event":"add_edge","payload":{"id":"edge:root_links_to_github","from":"component:root_outbound_links","to":"ext:github_hosting","label":"resolve in browser"}}
 {"seq":30,"pass":3,"event":"freeze_pass","payload":{"pass":3,"note":"L3 component selection frozen (2 containers, 2 components each)"}}
+{"seq":31,"pass":4,"event":"refine_label","payload":{"id":"ext:github_hosting","label":"GitHub platform (static hosting and rendering)"}}
+{"seq":32,"pass":4,"event":"freeze_pass","payload":{"pass":4,"note":"Final architecture render frozen"}}
