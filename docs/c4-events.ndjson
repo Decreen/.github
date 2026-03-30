@@ -7,3 +7,14 @@
 {"seq":7,"pass":1,"event":"add_edge","payload":{"id":"edge:member_pushes","from":"actor:org_member","to":"ext:github_hosting","label":"push / manage content"}}
 {"seq":8,"pass":1,"event":"add_edge","payload":{"id":"edge:reader_views","from":"actor:public_reader","to":"ext:github_hosting","label":"view rendered profile"}}
 {"seq":9,"pass":1,"event":"freeze_pass","payload":{"pass":1,"note":"L1 context frozen; no runnable deployable units in source tree"}}
+{"seq":10,"pass":2,"event":"set_system_boundary","payload":{"id":"sys:org_profile_suite","label":"Organization profile and repository documentation","rationale":"Bounded by markdown sources under profile/ and repository root only"}}
+{"seq":11,"pass":2,"event":"add_container","payload":{"id":"container:profile_markdown","label":"Profile landing markdown","parent":"sys:org_profile_suite","path_hint":"profile/README.md"}}
+{"seq":12,"pass":2,"event":"add_container","payload":{"id":"container:root_markdown","label":"Root repository markdown","parent":"sys:org_profile_suite","path_hint":"README.md"}}
+{"seq":13,"pass":2,"event":"exclude_candidate","payload":{"id":"candidate:separate_backend","reason":"No backend service code or config in repository"}}
+{"seq":14,"pass":2,"event":"exclude_candidate","payload":{"id":"candidate:database","reason":"No database or persistence layer configuration in repository"}}
+{"seq":15,"pass":2,"event":"add_edge","payload":{"id":"edge:member_edits_profile","from":"actor:org_member","to":"container:profile_markdown","label":"author / update"}}
+{"seq":16,"pass":2,"event":"add_edge","payload":{"id":"edge:member_edits_root","from":"actor:org_member","to":"container:root_markdown","label":"author / update"}}
+{"seq":17,"pass":2,"event":"add_edge","payload":{"id":"edge:profile_served_via_github","from":"container:profile_markdown","to":"ext:github_hosting","label":"published as static content"}}
+{"seq":18,"pass":2,"event":"add_edge","payload":{"id":"edge:root_served_via_github","from":"container:root_markdown","to":"ext:github_hosting","label":"published as static content"}}
+{"seq":19,"pass":2,"event":"add_edge","payload":{"id":"edge:reader_consumes_github","from":"actor:public_reader","to":"ext:github_hosting","label":"browse"}}
+{"seq":20,"pass":2,"event":"freeze_pass","payload":{"pass":2,"note":"L2 containers frozen"}}

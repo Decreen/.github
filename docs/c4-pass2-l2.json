@@ -1,0 +1,22 @@
+{
+  "pass": 2,
+  "system": {
+    "id": "sys:org_profile_suite",
+    "label": "Organization profile and repository documentation"
+  },
+  "containers": [
+    {
+      "id": "container:profile_markdown",
+      "label": "Profile landing markdown",
+      "parent": "sys:org_profile_suite",
+      "evidence_path": "profile/README.md"
+    },
+    {
+      "id": "container:root_markdown",
+      "label": "Root repository markdown",
+      "parent": "sys:org_profile_suite",
+      "evidence_path": "README.md"
+    }
+  ],
+  "seq_range": [10, 20]
+}
