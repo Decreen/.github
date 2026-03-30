@@ -1,0 +1,33 @@
+{
+  "pass": 1,
+  "evidence_policy": "code_only",
+  "actors": [
+    {
+      "id": "actor:developer",
+      "label": "Developer",
+      "evidence": "inferred_human_operator"
+    }
+  ],
+  "runtime_externals": [
+    {
+      "id": "ext:github",
+      "label": "GitHub",
+      "evidence": ".git/config remote.origin.url=https://github.com/Decreen/.github"
+    }
+  ],
+  "deployables": [],
+  "exclusions": [
+    {
+      "id": "candidate:app-runtime",
+      "reason": "No deployable application units in version-controlled tree beyond documentation paths."
+    }
+  ],
+  "edges": [
+    {
+      "id": "edge:dev_github",
+      "from": "actor:developer",
+      "to": "ext:github",
+      "label": "uses"
+    }
+  ]
+}
