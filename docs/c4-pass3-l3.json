@@ -1,0 +1,27 @@
+{
+  "pass": 3,
+  "selected_containers": ["container:repository-tree"],
+  "components": [
+    {
+      "id": "component:workspace-files",
+      "label": "Working tree files (e.g. root and profile paths)",
+      "container": "container:repository-tree",
+      "kind": "storage"
+    },
+    {
+      "id": "component:git-configuration",
+      "label": "Git metadata and remote configuration (.git)",
+      "container": "container:repository-tree",
+      "kind": "integration"
+    }
+  ],
+  "exclusions": [
+    {"id": "candidate:separate-profile-service", "reason": "profile/ is a directory in the same repository tree, not a separate runtime or deployable unit in this codebase."}
+  ],
+  "edges": [
+    {"id": "edge:git-config-github", "from": "component:git-configuration", "to": "ext:github", "label": "Declares origin remote and sync semantics"},
+    {"id": "edge:files-under-vc", "from": "component:workspace-files", "to": "component:git-configuration", "label": "Paths tracked or ignored per repository rules"}
+  ],
+  "seq_max": 21,
+  "frozen": "l3_selection"
+}

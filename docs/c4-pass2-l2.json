@@ -1,0 +1,20 @@
+{
+  "pass": 2,
+  "system": {
+    "id": "sys:decreen-dot-github",
+    "label": "Decreen .github repository (GitHub-hosted)"
+  },
+  "containers": [
+    {"id": "container:repository-tree", "label": "Version-controlled repository tree (files and directories)"}
+  ],
+  "exclusions": [
+    {"id": "candidate:relational-database", "reason": "No database drivers, connection strings, or schema migrations found in source or config files."},
+    {"id": "candidate:message-broker", "reason": "No broker client libraries or queue configuration found in repository files."}
+  ],
+  "edges": [
+    {"id": "edge:repo-sync-github", "from": "container:repository-tree", "to": "ext:github", "label": "Git remote sync (push/pull)"},
+    {"id": "edge:developer-repo-tree", "from": "actor:developer", "to": "container:repository-tree", "label": "Edits and maintains files"}
+  ],
+  "seq_max": 15,
+  "frozen": "l2_containers"
+}
