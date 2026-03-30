@@ -1,0 +1,13 @@
+{
+  "pass": 1,
+  "actors": [
+    {"id": "actor:org_member", "label": "Organization member", "evidence": "Repository is an org .github profile repo; members maintain content."},
+    {"id": "actor:public_reader", "label": "Public reader", "evidence": "Public GitHub renders organization profile for visitors."}
+  ],
+  "externals": [
+    {"id": "ext:github_hosting", "label": "GitHub (hosting and rendering)", "evidence": "Remote origin is github.com; no other hosting config in tree."}
+  ],
+  "deployables": [],
+  "deployables_rationale": "Workspace contains only Markdown under root and profile/; no Dockerfiles, package manifests, services, or IaC files define a separately runnable unit.",
+  "seq_range": [2, 9]
+}
