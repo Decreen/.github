@@ -1,0 +1,11 @@
+{
+  "pass": 1,
+  "actors": [
+    {"id": "actor:developer", "label": "Developer", "evidence": "human operator implied by git remote collaboration model in .git/config"}
+  ],
+  "externals": [
+    {"id": "ext:github", "label": "GitHub (Git hosting and UI)", "evidence": "remote origin URL https://github.com/Decreen/.github in .git/config"}
+  ],
+  "deployables": [],
+  "notes": "No deployable runtime units found in workspace source or executable config files; repository contains markdown only under version control."
+}
